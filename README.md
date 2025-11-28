@@ -82,15 +82,6 @@ A tabela a seguir documenta todos os pinos customizados adicionados ao SoC via `
 |-----------|-----------|
 | RESET_N   | G2        |
 
----
-
-### I2C Personalizado (`i2c_bus`)
-| Sinal | Pino FPGA |
-|--------|-----------|
-| SCL    | H18       |
-| SDA    | J18       |
-
-
 
 ---
 
