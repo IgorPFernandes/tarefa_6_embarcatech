@@ -63,52 +63,34 @@ O arquivo na pasta **litex** contém a configuração do SoC baseado na platafor
 
 ---
 
-## 3. Pinos Utilizados no Projeto
+## 3. Pinagem Utilizada no Projeto
 
-A tabela abaixo descreve os pinos atualmente utilizados pelo sistema.  
-Os nomes lógicos são definidos no LiteX e mapeados para pads físicos da Colorlight i5.
+A tabela a seguir documenta todos os pinos customizados adicionados ao SoC via `add_extension()` e utilizados ativamente no firmware/HDL.
 
-Preencha conforme o mapeamento real do seu projeto.
+### SPI Personalizado (`spi_perif`)
+| Sinal | Pino FPGA |
+|-------|-----------|
+| CLK   | F2        |
+| MOSI  | E2        |
+| MISO  | D2        |
+| CS_N  | C2        |
 
-### UART (Console)
-| Sinal | Pino da Placa | Observações |
-|-------|----------------|-------------|
-| TX    | PREENCHER      | Saída UART para o computador |
-| RX    | PREENCHER      | Entrada UART do computador   |
+---
 
-### LEDs
-| Sinal      | Pino da Placa | Observações |
-|------------|----------------|-------------|
-| leds_out   | PREENCHER      | LED utilizado no comando `led_cmd` |
+### GPIO – Reset do LoRa (`lora_reset_pin`)
+| Sinal     | Pino FPGA |
+|-----------|-----------|
+| RESET_N   | G2        |
 
-### SPI Master
-| Sinal | Pino da Placa | Observações |
-|-------|----------------|-------------|
-| MOSI  | PREENCHER      | Usado para dispositivo externo |
-| MISO  | PREENCHER      | Usado para dispositivo externo |
-| SCK   | PREENCHER      | Clock do barramento SPI |
-| CS    | PREENCHER      | Chip Select do periférico |
+---
 
-### I2C Master
-| Sinal | Pino da Placa | Observações |
-|-------|----------------|-------------|
-| SDA   | PREENCHER      | Dados I2C |
-| SCL   | PREENCHER      | Clock I2C |
+### I2C Personalizado (`i2c_bus`)
+| Sinal | Pino FPGA |
+|--------|-----------|
+| SCL    | H18       |
+| SDA    | J18       |
 
-### GPIO / Reset Externo
-| Sinal           | Pino da Placa | Observações |
-|------------------|----------------|-------------|
-| lora_reset_n_out | PREENCHER      | Controle de reset para módulo externo |
 
-### SDRAM
-| Sinal | Pinos da Placa | Observações |
-|--------|--------------------|-------------|
-| DQ     | PREENCHER          | Barramento de dados |
-| A      | PREENCHER          | Barramento de endereços |
-| CLK    | PREENCHER          | Clock SDRAM |
-| WE/CS  | PREENCHER          | Sinais de controle |
-
-> Observação: a quantidade exata de pinos depende da memória M12L64322A da placa.
 
 ---
 
